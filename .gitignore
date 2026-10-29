@@ -1,0 +1,18 @@
+# Dependencias de Node.js (nunca se suben al repositorio)
+node_modules/
+
+# Archivos de entorno y credenciales
+.env
+.env.local
+.env.*.local
+
+# Logs y trazas de errores
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
