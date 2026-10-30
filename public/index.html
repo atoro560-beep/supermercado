@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StockFlow - Catálogo Web Interactivo</title>
+	<!-- Vinculación del archivo CSS externo -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<header>
+		<div class="logo">
+			<span>📦 StockFlow</span>
+		</div>
+		<div class="search-bar">
+			<input type="text" id="searchInput" placeholder="Buscar por nombre...">
+			<button onclick="filterProducts()">Buscar</button>
+		</div>
+		<div class="cart-icon" onclick="scrollToCart()">
+			🛒 Mi Pedido (<span id="cartCount">0</span>)
+		</div>
+	</header>
+
+	<div class="main-container">
+		<div class="catalog-section">
+			<div class="promos-banner">
+				<div>
+					<h3>🎃 🔥 Combo Mayorista del Mes</h3>
+					<p>🕷️ Lleva Combo de Abarrotes Especial con 15% de Descuento. 👻</p>
+				</div>
+				<button class="btn-promo" onclick="addPromoCombo()">Agregar Combo</button>
+			</div>
+
+			<div class="categories">
+				<button class="category-btn active" onclick="filterCategory('Todos', this)">Todos</button>
+				<button class="category-btn" onclick="filterCategory('Abarrotes', this)">Abarrotes</button>
+				<button class="category-btn" onclick="filterCategory('Lácteos', this)">Lácteos</button>
+				<button class="category-btn" onclick="filterCategory('Bebidas', this)">Bebidas</button>
+				<button class="category-btn" onclick="filterCategory('Combos', this)">Combos</button>
+			</div>
+
+			<div class="products-grid" id="productsGrid">
+				<!-- Se llena dinámicamente con JavaScript -->
+			</div>
+		</div>
+
+		<div class="cart-summary" id="cartSection">
+			<h3>Resumen del Pedido</h3>
+			<div class="cart-list" id="cartList">
+				<p class="empty-msg">Tu carrito está vacío</p>
+			</div>
+			<div class="cart-total">
+				<span>Total Estimado:</span>
+				<span id="cartTotal">$ 0</span>
+			</div>
+			<button class="btn-order" onclick="confirmOrder()">Confirmar Pedido Anticipado</button>
+		</div>
+	</div>
+
+	<!-- Modal de Confirmación -->
+	<div class="modal" id="orderModal">
+		<div class="modal-content">
+			<h2>¡Pedido Confirmado! 🎉</h2>
+			<p id="modalMessage">Tu pedido ha sido recibido y enviado a la bodega para su preparación.</p>
+			<button onclick="closeModal()">Aceptar</button>
+		</div>
+	</div>
+
+	<!-- Vinculación del archivo JavaScript externo -->
+	<script src="script.js"></script>
+</body>
+
+</html>
